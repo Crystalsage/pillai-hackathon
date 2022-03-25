@@ -39,6 +39,10 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/emailError"
+                    android:hint="Email"
+                    app:hintTextColor="@color/navy_blue"
+
+                    app:hintAnimationEnabled="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp">
@@ -54,7 +58,7 @@
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
                         android:paddingStart="0dp"
-                        android:paddingLeft="5dp"
+                        android:paddingLeft="0dp"
                         android:singleLine="true" />
 
 
@@ -65,6 +69,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:hint="Password"
+                    app:hintTextColor="@color/navy_blue"
                     app:passwordToggleEnabled="true">
 
                     <EditText
@@ -86,13 +92,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="20dp"
-                    android:shadowColor="@color/baby_blue"
+                    android:shadowColor="@color/navy_blue"
                     android:stateListAnimator="@anim/button_animation"
-                    android:background="#003B73"
+                    android:backgroundTint="@color/navy_blue"
                     android:fontFamily="@font/lato"
                     android:text="@string/login"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/forgot_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/lato"
+                    android:textColor="@color/navy_blue"
+                    android:text="Forgot your password?" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
