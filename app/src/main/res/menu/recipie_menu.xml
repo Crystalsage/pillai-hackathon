@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <item
+        android:id="@+id/search_the_item_recipie"
+        android:title="Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView">
+
+    </item>
+
+    <item
+        android:title="Filter By: "
+        android:id="@+id/filt_icon_recipie"
+        android:icon="@drawable/ic_baseline_filter_list_24"
+        app:showAsAction="ifRoom">
+
+        <menu>
+
+            <item
+                android:id="@+id/religion_heading"
+                android:title="Cuisine"
+                android:icon="@drawable/male_glasses_afro_american_hair_style">
+
+                <menu>
+
+                    <item
+                        android:id="@+id/r1"
+                        android:title="Veg"/>
+
+                    <item
+                        android:id="@+id/r2"
+                        android:title="Non Veg"/>
+
+                    <item
+                        android:id="@+id/r3"
+                        android:title="Jain"/>
+
+                    <item
+                        android:id="@+id/r4"
+                        android:title="Diabetic"/>
+
+                </menu>
+
+            </item>
+
+        </menu>
+    </item>
+
+</menu>

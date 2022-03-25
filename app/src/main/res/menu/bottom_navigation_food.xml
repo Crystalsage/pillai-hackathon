@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_stock"
+        android:icon="@drawable/ic_baseline_stock"
+        android:title="Stock" />
+
+    <item
+        android:id="@+id/nav_recipie"
+        android:icon="@drawable/ic_baseline_food_bank_24"
+        android:title="Recipie" />
+
+
+</menu>

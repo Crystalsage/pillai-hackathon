@@ -82,7 +82,7 @@ public class Records_Activity_Main extends AppCompatActivity {
                         case R.id.nav_male:
                             selectedFragment = new Male_Fragment();
                             break;
-                        case R.id.nav_female:s:
+                        case R.id.nav_female:
                             selectedFragment = new FemaleFragment();
                             break;
                     }

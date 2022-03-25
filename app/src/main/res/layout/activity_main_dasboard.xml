@@ -75,36 +75,6 @@
                         app:srcCompat="@drawable/records" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/ManageEventShow"
-                android:layout_width="0dp"
-                android:backgroundTint="@color/browser_actions_bg_grey"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView3"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="Manage Data"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/manageusers" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -236,7 +206,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Emergency Services"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <ImageView
                         android:id="@+id/airplane"

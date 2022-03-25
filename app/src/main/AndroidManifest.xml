@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OldAgeManagmentSystem">
         <activity
+            android:name=".MedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageDataFemale"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayUserData"
+            android:exported="false" />
+        <activity
             android:name=".WorkshopSection"
             android:exported="false" />
         <activity

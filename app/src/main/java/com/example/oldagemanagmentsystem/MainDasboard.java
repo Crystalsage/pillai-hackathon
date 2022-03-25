@@ -28,9 +28,18 @@ public class MainDasboard extends AppCompatActivity {
 
         cd1=(CardView)findViewById(R.id.user_record);
 
+        cd2=(CardView)findViewById(R.id.notices);
+
+        cd2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainDasboard.this,MedicineActivity.class));
+            }
+        });
+
         log_out=(Button)findViewById(R.id.log_out_admin);
 
-        cd2=(CardView)findViewById(R.id.ManageEventShow);
+
         cd1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,12 +47,6 @@ public class MainDasboard extends AppCompatActivity {
             }
         });
 
-        cd2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ManageData.class));
-            }
-        });
 
         log_out.setOnClickListener(new View.OnClickListener() {
             @Override

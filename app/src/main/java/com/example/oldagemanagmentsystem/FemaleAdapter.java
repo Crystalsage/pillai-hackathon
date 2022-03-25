@@ -1,7 +1,6 @@
 package com.example.oldagemanagmentsystem;
 
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,27 +17,24 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class viewPersonAdapter extends RecyclerView.Adapter<viewPersonAdapter.ViewHolder> {
-
+public class FemaleAdapter extends RecyclerView.Adapter<FemaleAdapter.ViewHolder>{
     private ArrayList<PersonViewItems> coursesArrayList;
     private Context context;
-   private Male_Fragment male_fragment;
+    private FemaleFragment femaleFragment;
 
-    public viewPersonAdapter(ArrayList<PersonViewItems> coursesArrayList, Context context, Male_Fragment male_fragment) {
+    public FemaleAdapter(ArrayList<PersonViewItems> coursesArrayList, Context context, FemaleFragment femaleFragment) {
         this.coursesArrayList = coursesArrayList;
         this.context = context;
-        this.male_fragment = male_fragment;
+        this.femaleFragment = femaleFragment;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        
+        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.person, parent, false);
 
-        View itemView=LayoutInflater.from(parent.getContext()).inflate(R.layout.person, parent, false);
-
-        ViewHolder viewHolder= new ViewHolder(itemView);
-        viewHolder.setOnClickListener(new ViewHolder.ClickListener() {
+        FemaleAdapter.ViewHolder viewHolder= new FemaleAdapter.ViewHolder(itemView);
+        viewHolder.setOnClickListener(new FemaleAdapter.ViewHolder.ClickListener() {
             @Override
             public void onItemCLick(View view, int position) {
 
@@ -88,7 +83,7 @@ public class viewPersonAdapter extends RecyclerView.Adapter<viewPersonAdapter.Vi
                             String bed_wr=coursesArrayList.get(position).getBed_w();
 
 
-                            Intent intent = new Intent(context,ManageData.class);
+                            Intent intent = new Intent(context,ManageDataFemale.class);
 
                             intent.putExtra("u_id",Id);
                             intent.putExtra("u_name",name);
@@ -107,7 +102,7 @@ public class viewPersonAdapter extends RecyclerView.Adapter<viewPersonAdapter.Vi
                         if (i==1){
 
 
-                            male_fragment.deleteData(position);
+                            femaleFragment.deleteData(position);
 
                         }
                     }
@@ -122,7 +117,6 @@ public class viewPersonAdapter extends RecyclerView.Adapter<viewPersonAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         PersonViewItems courses = coursesArrayList.get(position);
         holder.fullname.setText(courses.getName());
         holder.religion.setText(courses.getReligion());
@@ -131,6 +125,7 @@ public class viewPersonAdapter extends RecyclerView.Adapter<viewPersonAdapter.Vi
                 .load(courses.getImage())
                 .fit()
                 .into(holder.imageView);
+
     }
 
     @Override
@@ -144,7 +139,6 @@ public class viewPersonAdapter extends RecyclerView.Adapter<viewPersonAdapter.Vi
         TextView age;
         ImageView imageView;
         View mView;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -170,21 +164,17 @@ public class viewPersonAdapter extends RecyclerView.Adapter<viewPersonAdapter.Vi
                     return false;
                 }
             });
-
-
         }
-        public ViewHolder.ClickListener mclickListener;
+        public FemaleAdapter.ViewHolder.ClickListener mclickListener;
 
         public interface ClickListener{
             void onItemCLick(View view, int position);
             void onItemLongClick(View view, int position);
         }
-
-        public void setOnClickListener(ViewHolder.ClickListener clickListener){
+        public void setOnClickListener(FemaleAdapter.ViewHolder.ClickListener clickListener){
 
             mclickListener=clickListener;
 
         }
-
     }
-    }
+}

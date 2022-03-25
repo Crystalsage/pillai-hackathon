@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,6 +31,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -49,6 +51,7 @@ public class Male_Fragment extends Fragment {
     ImageButton imageButton;
     Toolbar toolbar;
 
+    FloatingActionButton add_male;
     private FirebaseFirestore db;
     ProgressBar loadingPB;
 
@@ -70,6 +73,7 @@ public class Male_Fragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_male_, container, false);
         setHasOptionsMenu(true);
 
+        add_male=(FloatingActionButton)view.findViewById(R.id.add_male_users);
         imageButton=(ImageButton)view.findViewById(R.id.GoBackButton);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -90,11 +94,24 @@ public class Male_Fragment extends Fragment {
         recview.setHasFixedSize(true);
         recview.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        courseRVAdapter = new viewPersonAdapter(coursesArrayList, getContext());
+        courseRVAdapter = new viewPersonAdapter(coursesArrayList, getContext(),Male_Fragment.this);
 
         // setting adapter to our recycler view.
         recview.setAdapter(courseRVAdapter);
 
+
+        add_male.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(),ManageData.class));
+            }
+        });
+
+        showData();
+        return view;
+    }
+
+    private void showData(){
         db.collection("Male Users").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -116,11 +133,6 @@ public class Male_Fragment extends Fragment {
             public void onFailure(@NonNull Exception e) {
             }
         });
-        return view;
-    }
-
-    private void showData(){
-
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -143,17 +155,30 @@ public class Male_Fragment extends Fragment {
         });
 
         super.onCreateOptionsMenu(menu, inflater);
-
-
     }
 
-    private void searchData(String s) {
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        db.collection("Male Users").whereEqualTo("Name",s.toLowerCase())
-                .get()
+        switch (item.getItemId()) {
+            case R.id.fitosi:
+                showagefifdata();
+                break;
+            case R.id.lit:
+                showlitdata();
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showlitdata() {
+
+        db.collection("Male Users").whereEqualTo("Literacy","Literate").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        coursesArrayList.clear();
                         if (!queryDocumentSnapshots.isEmpty()) {
                             loadingPB.setVisibility(View.GONE);
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
@@ -169,9 +194,54 @@ public class Male_Fragment extends Fragment {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-
             }
         });
 
+    }
+
+    private void showagefifdata() {
+    }
+
+    private void searchData(String s) {
+        db.collection("Male Users").whereEqualTo("search",s.toLowerCase()).get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        coursesArrayList.clear();
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            loadingPB.setVisibility(View.GONE);
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot d : list) {
+                                PersonViewItems c = d.toObject(PersonViewItems.class);
+                                coursesArrayList.add(c);
+                            }
+                            courseRVAdapter.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+            }
+        });
+
+    }
+
+    public void deleteData(int index){
+        db.collection("Male Users").document(coursesArrayList.get(index).getId())
+                .delete()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(getContext(), "Data Deleted", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getContext(),Records_Activity_Main.class));
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getContext(), "Failed to update Data", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

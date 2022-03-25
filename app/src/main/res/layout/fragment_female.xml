@@ -4,79 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Male_Fragment">
+    tools:context=".FemaleFragment">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/female_recycler"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="700dp"
+        android:nestedScrollingEnabled="true"
+        android:paddingTop="60dp"
+        android:scrollbars="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout_female"
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout_female"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_records_female"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:minHeight="?attr/actionBarSize">
 
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_records_female"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="0dp"
-                android:minHeight="?attr/actionBarSize">
+                android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/GoBackButton_female"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_baseline_arrow_back_black_24">
 
-                    <ImageButton
-                        android:id="@+id/GoBackButton_female"
-                        android:layout_width="55dp"
-                        android:layout_height="45dp"
-                        android:background="@color/white"
-                        android:src="@drawable/ic_baseline_arrow_back_24">
+                </ImageButton>
 
-                    </ImageButton>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="88dp"
+                    android:text="Female Users"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="88dp"
-                        android:text="Female Users"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
-                        android:textStyle="bold">
-
-                    </TextView>
+                </TextView>
 
 
-                </RelativeLayout>
+            </RelativeLayout>
 
 
-            </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
 
-        </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/female_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="55dp">
+    <ProgressBar
+        android:id="@+id/idProgressBar_female"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="305dp"
+        android:layout_marginLeft="180dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="@+id/female_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/female_recycler"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.recyclerview.widget.RecyclerView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_female_users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:fabSize="normal"
+        android:layout_marginTop="620dp"/>
 
-        <ProgressBar
-            android:id="@+id/idProgressBar_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            app:layout_constraintBottom_toBottomOf="@+id/male_recycler"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/male_recycler"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
 
 </FrameLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <item
+        android:id="@+id/search_the_item_stock"
+        android:title="Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView">
+
+    </item>
+
+    <item
+        android:title="Filter By: "
+        android:id="@+id/filt_icon_stock"
+        android:icon="@drawable/ic_baseline_filter_list_24"
+        app:showAsAction="ifRoom">
+
+        <menu>
+
+            <item
+                android:id="@+id/quantity_heading"
+                android:title="Sort By Quantity"
+                android:icon="@drawable/male_glasses_afro_american_hair_style">
+
+                <menu>
+
+                    <item
+                        android:id="@+id/q1"
+                        android:title="Range 1 to 50 KG"/>
+
+                    <item
+                        android:id="@+id/q2"
+                        android:title="Range 50 to 100 KG"/>
+
+                    <item
+                        android:id="@+id/q3"
+                        android:title="Range 100 to 250 KG"/>
+
+                    <item
+                        android:id="@+id/q4"
+                        android:title="Range 250+ KG"/>
+
+                </menu>
+
+            </item>
+
+</menu>
+        </item>
+
+</menu>
