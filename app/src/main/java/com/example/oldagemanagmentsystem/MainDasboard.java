@@ -15,7 +15,7 @@ import android.widget.PopupWindow;
 
 public class MainDasboard extends AppCompatActivity {
 
-    CardView cd1,cd2;
+    CardView cd1,cd2,cd3,cd4,cd5;
     Button log_out;
     PopupWindow popupWindow;
     Button showPopupBtn, closePopupBtn;
@@ -29,6 +29,32 @@ public class MainDasboard extends AppCompatActivity {
         cd1=(CardView)findViewById(R.id.user_record);
 
         cd2=(CardView)findViewById(R.id.notices);
+
+        cd3=(CardView)findViewById(R.id.logoutadmin);
+
+        cd4=(CardView)findViewById(R.id.bookings);
+
+        cd5=(CardView)findViewById(R.id.food_mod);
+
+        cd5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Food_Activity.class));
+            }
+        });
+        cd4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Donation_screen.class));
+            }
+        });
+
+        cd3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),EmergencySection.class));
+            }
+        });
 
         cd2.setOnClickListener(new View.OnClickListener() {
             @Override

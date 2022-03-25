@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="#ffffff"
+
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/recipie_imageview"
+            app:cardCornerRadius="60dp" >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/imageview_recipie">
+
+
+            </ImageView>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/recipie_imageview"
+            android:text="Wheat"
+            android:textColor="#000000"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/recipie_imageview"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="-41dp"
+            android:layout_toRightOf="@id/textview"
+            android:gravity="center"
+            android:text="Quantity"
+            android:textColor="#000000"
+            android:textSize="12sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/textview1"
+            android:layout_marginLeft="-267dp"
+            android:layout_marginTop="21dp"
+            android:layout_toRightOf="@id/textview1"
+            android:text="300KG"
+            android:textColor="#000000"
+            android:textSize="12sp">
+
+        </TextView>
+
+        <!--        <TextView-->
+<!--            android:id="@+id/divider"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_below="@id/recipie_imageview"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="-5dp"-->
+<!--            android:layout_toRightOf="@id/recipie_imageview"-->
+<!--            android:text="________________________________"-->
+<!--            android:textColor="#CDC7C7"-->
+<!--            android:textSize="10sp"></TextView>-->
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

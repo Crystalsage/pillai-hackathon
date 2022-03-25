@@ -44,4 +44,6 @@
     <string name="irreligion">Irreligion</string>
     <string name="others">Others</string>
     <string name="error">Error</string>
+    <string name="pensioner">Pensioner</string>
+    <string name="health">Health</string>
 </resources>

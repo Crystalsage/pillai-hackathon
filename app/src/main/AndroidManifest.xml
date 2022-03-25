@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.oldagemanagmentsystem">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OldAgeManagmentSystem">
         <activity
+            android:name=".Donation_screen"
+            android:exported="false" />
+        <activity
+            android:name=".EmergencySection"
+            android:exported="false" />
+        <activity
+            android:name=".ToDoTask"
+            android:exported="false" />
+        <activity
             android:name=".MedicineActivity"
             android:exported="false" />
         <activity
             android:name=".ManageDataFemale"
+            android:exported="false" />
+        <activity
+            android:name=".Food_Activity"
             android:exported="false" />
         <activity
             android:name=".DisplayUserData"
