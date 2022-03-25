@@ -133,7 +133,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@color/navy_blue"
+                    android:backgroundTint="@color/navy_blue"
                     android:fontFamily="@font/lato"
                     android:text="Report"
                     android:textColor="@color/white" />
@@ -211,7 +211,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -393,8 +393,8 @@
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/navy_blue"
                         android:fontFamily="@font/lato"
+                        android:backgroundTint="@color/navy_blue"
                         android:textColor="@color/white"
                         android:layout_marginLeft="20dp"
                         android:layout_marginBottom="10dp"
@@ -405,8 +405,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="100dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@color/navy_blue"
                         android:fontFamily="@font/lato"
+                        android:backgroundTint="@color/navy_blue"
                         android:textColor="@color/white"
                         android:text="PAN Card"/>
                 </LinearLayout>

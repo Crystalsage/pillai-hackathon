@@ -47,23 +47,21 @@
                 android:layout_marginRight="60dp"
                 android:fontFamily="@font/lato"
                 android:text="Logout"
-                android:textColor="#1d1f21"
-                app:cornerRadius="0dp"
-                app:strokeColor="@color/charcoal"
-                app:strokeWidth="2dp" />
+                android:textColor="@color/grey"
+                app:cornerRadius="0dp" />
 
             <Button
+                android:id="@+id/cancel"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_gravity="left"
                 android:layout_marginStart="60dp"
-                android:id="@+id/cancel"
                 android:layout_marginTop="70dp"
                 android:backgroundTint="@color/charcoal"
                 android:fontFamily="@font/lato"
                 android:text="Cancel"
                 android:textColor="#c5c6c8"
-                app:cornerRadius="100dp"
+                app:cornerRadius="0dp"
                 app:strokeColor="#1d1f21"
                 app:strokeWidth="5dp" />
         </androidx.cardview.widget.CardView>

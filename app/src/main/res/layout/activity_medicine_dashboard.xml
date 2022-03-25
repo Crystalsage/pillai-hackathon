@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/contributeCard"
+            android:id="@+id/tablets_card"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -183,7 +183,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/industry_field"
+            android:id="@+id/liquids_card"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -245,7 +245,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/contributeCard"
+            android:id="@+id/ointments_card"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -293,7 +293,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/industry_field"
+            android:id="@+id/powders_card"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -355,7 +355,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_two">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/gottoentre"
+            android:id="@+id/logreport_card"
             android:layout_width="248dp"
             android:layout_height="128dp"
             android:layout_margin="8dp"
@@ -382,7 +382,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/logtext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
