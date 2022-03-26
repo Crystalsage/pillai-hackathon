@@ -1,4 +1,4 @@
-This project was created as a part of our submission to Algeria hackathon 2022.
+This project was created as a part of our submission to Alegria hackathon 2022.
 
 # Angel
 <img src="https://cdn.discordapp.com/attachments/955875342910902282/955875353480548382/unknown.png"/>
