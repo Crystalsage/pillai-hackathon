@@ -14,7 +14,7 @@ Angel is a portable, user-friendly and administrative application which allows o
 Keeping some use cases of a typical old age home in mind, we have implemented the following features. All of them are accessible through the admin user's dashboard.
 
 
-<img src="https://cdn.discordapp.com/attachments/955875342910902282/956078596265492510/unknown.png"/>
+<img src="https://cdn.discordapp.com/attachments/742639290416234543/957171727736119337/unknown.png"/>
 
 ### Records
 This module offers a read-and-delete-only profile based view of 
